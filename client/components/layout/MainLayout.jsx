@@ -1,5 +1,8 @@
 MainLayout = React.createClass({
     render() {
+
+        $.material.init();
+
         return (
             <div>
                 {this.props.header}

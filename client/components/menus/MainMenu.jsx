@@ -15,7 +15,8 @@ MainMenu = React.createClass({
         let { currentUser, brand } = this.data;
 
         if (currentUser) {
-            loginButton = <a href="#" onClick={this.handleLogout}>Logout</a>
+            console.log(currentUser)
+            loginButton = <a href="#" onClick={this.handleLogout}>Logout {currentUser.username} </a>
         } else {
             loginButton = <a href="/login">Login</a>
         }

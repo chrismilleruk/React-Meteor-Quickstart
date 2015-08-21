@@ -1,8 +1,8 @@
 Home = React.createClass({
     render() {
         return (
-            <div clssName="">
-                <div className="jumbotron m_top-20">
+            <div className="well page m_top-20">
+                <div className="">
                     <div className="container">
                         <h1 className="text-center">Simple React</h1>
 
