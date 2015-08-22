@@ -1,7 +1,7 @@
 Home = React.createClass({
     render() {
         return (
-            <div className="well page m_top-20">
+            <div className="well page">
                 <div className="">
                     <div className="container">
                         <h1 className="text-center">Simple React</h1>

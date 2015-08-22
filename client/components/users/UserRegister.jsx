@@ -1,40 +1,31 @@
-UserLogin = React.createClass({
-    mixins: [ReactMeteorData],
-    getMeteorData() {
-        return {
-            currentUser: Meteor.user()
-        }
-    },
+UserRegister = React.createClass({
     onSubmitHandler(e) {
-        e.preventDefault();
-        var self = this;
+        e.preventDefault()
 
-        var email = e.target.email.value;
-        var password = e.target.password.value;
+        let data = {
+            "username": e.target.username.value,
+            "password": e.target.password.value,
+            "email": e.target.email.value
+        }
 
-        Meteor.loginWithPassword(email, password, function (err) {
-            if (err) {
-                console.log(err.reason)
-            } else {
-                FlowRouter.go("Home");
-            }
-        });
+        Meteor.call("Register", data)
     },
-    render(){
-        let { currentUser } = this.data;
-
-        let userLogin;
-        if (currentUser) {
-            userLogin = <h5>Man, you are logged in!</h5>
-        } else {
-            userLogin = <div className="container well page">
+    render() {
+        return (
+            <div className="container well page">
                 <div className="row">
                     <div className="col-sm-6 col-sm-offset-3">
-                        <h1>Login</h1>
-
-
+                        <h1>Register</h1>
                         <form onSubmit={this.onSubmitHandler}>
                             <div className="inputs">
+                                <div className="form-control-wrapper">
+                                    <input type="text" className="form-control empty" name="username"/>
+
+                                    <div className="floating-label">
+                                        Username
+                                    </div>
+                                    <span className="material-input"></span>
+                                </div>
                                 <div className="form-control-wrapper">
                                     <input type="text" className="form-control empty" name="email"/>
 
@@ -43,35 +34,21 @@ UserLogin = React.createClass({
                                     </div>
                                     <span className="material-input"></span>
                                 </div>
-
                                 <div className="form-control-wrapper">
-                                    <input type="password" className="form-control empty" name="password"/>
+                                    <input type="text" className="form-control empty" name="password"/>
 
                                     <div className="floating-label">
                                         Password
                                     </div>
                                     <span className="material-input"></span>
                                 </div>
-
+                                <input type="submit" value="Login" className="btn btn-primary"/>
                             </div>
-
-
-                            <input type="submit" value="Login" className="btn btn-primary"/>
                         </form>
-
-
-
                     </div>
                 </div>
             </div>
-        }
-
-
-        return (
-            <div className="">
-
-                { userLogin }
-            </div>
         )
     }
+
 })

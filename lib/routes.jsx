@@ -13,6 +13,13 @@ FlowRouter.route("/Login", {
     }
 });
 
+FlowRouter.route("/Register", {
+    name:"Register",
+    action(params) {
+        renderMainLayout(<UserRegister />)
+    }
+})
+
 
 
 renderMainLayout = (component) => {
