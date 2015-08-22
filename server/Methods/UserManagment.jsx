@@ -5,14 +5,47 @@ Meteor.methods({
                 email: data.email,
                 password: data.password,
                 username: data.username,
-                profile: {
-
-                }
+                profile: {}
             })
             console.log("USER REGISTERED ", data.username)
-        } catch(e) {
+            return true
+        } catch (e) {
             console.log("USER NOT REGISTERED, ERROR: ", e.reason)
+            return false
         }
 
+    },
+    "UpdateProfile": (data) => {
+        try {
+
+            Meteor.users.update({
+                _id: Meteor.user()._id
+            }, {
+                $set: {
+                    "profile.firstName": data.firstName,
+                    "profile.lastName": data.lastName
+                }
+            })
+            console.log("Updated")
+        } catch (e) {
+            console.log(e.reason)
+        }
     }
 })
+
+
+//Meteor.users.update({
+//                _id:Meteor.userId()._id
+//            },{
+//                $set: {
+//                    profile: {
+//                        'firstName':data.firstName,
+//                        'lastName':data.lastName
+//                    }
+//                }
+//            })
+//            console.log("PROFILE UPDATED")
+//        } catch(e) {
+//            console.log(e.reason)
+//        }
+

@@ -1,4 +1,6 @@
-FlowRouter.route("/", {
+exposed = FlowRouter.group({})
+
+exposed.route("/", {
     name: "Home",
     action(params) {
         //ReactLayout.render(Home);
@@ -6,20 +8,35 @@ FlowRouter.route("/", {
     }
 });
 
-FlowRouter.route("/Login", {
+exposed.route("/Login", {
     name: "Login",
     action(params) {
         renderMainLayout(<UserLogin />)
     }
 });
 
-FlowRouter.route("/Register", {
+exposed.route("/Register", {
     name:"Register",
     action(params) {
         renderMainLayout(<UserRegister />)
     }
 })
 
+
+loggedIn = FlowRouter.group({
+    triggersEnter: [function(context, redirect) {
+        if(!Meteor.userId()) {
+            FlowRouter.go("Login")
+        }
+    }]
+})
+
+loggedIn.route("/Profile", {
+    name: "Profile",
+    action(params) {
+        renderMainLayout(<Profile />)
+    }
+})
 
 
 renderMainLayout = (component) => {

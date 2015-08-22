@@ -8,7 +8,20 @@ UserRegister = React.createClass({
             "email": e.target.email.value
         }
 
-        Meteor.call("Register", data)
+        Meteor.call("Register", data, (err, res) => {
+            if(err) {
+                console.log(err)
+            } else {
+                console.log("User registered! ", res)
+                Meteor.loginWithPassword(data.email, data.password, (err, res)=>{
+                    console.log("User logged in! ", data.username)
+                    FlowRouter.go("Home")
+                })
+            }
+
+
+
+        });
     },
     render() {
         return (

@@ -1,4 +1,4 @@
-MainMenu = React.createClass({
+MainMenuLogged = React.createClass({
     mixins: [ReactMeteorData],
     getMeteorData() {
         return {
@@ -8,11 +8,11 @@ MainMenu = React.createClass({
     },
     handleLogout(){
         Meteor.logout();
-    },
-    handleTest() {
-
+        FlowRouter.go("Home")
     },
     render() {
+
+
 
         let loginButton;
         let { currentUser, brand } = this.data;
@@ -24,34 +24,42 @@ MainMenu = React.createClass({
             loginButton = <a href="/login">Login</a>
         }
 
-        return (
+        return(
+
             <div>
                 <nav className="navbar navbar-default">
                     <div className="container-fluid">
                         <div className="navbar-header">
                             <a className="navbar-brand" href="/">
-                                {brand}
+                                { brand }
                             </a>
                         </div>
                         <ul className="nav navbar-nav">
 
-
-
                         </ul>
                         <ul className="nav navbar-nav navbar-right">
+                            <li><a>{}</a></li>
+
 
                             <li className="dropdown">
-                                <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span className="caret"></span></a>
+                                <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    {currentUser.username}
+                                    <span className="caret"></span>
+                                </a>
                                 <ul className="dropdown-menu">
+                                    <li><a href="/Profile">Profile</a></li>
+                                    <li role="separator" className="divider"></li>
                                     <li>{loginButton}</li>
-                                    <li><a href="/Register">Register</a></li>
+
                                 </ul>
                             </li>
+
 
                         </ul>
                     </div>
                 </nav>
             </div>
+
         )
     }
-});
+})
