@@ -33,10 +33,8 @@ Profile = React.createClass({
 
         return (
             <div>
+                <Container>
 
-                <div className="container well page">
-                    <div className="row">
-                        <div className="col-sm-6 col-sm-offset-3">
                             <h1>Profile</h1>
                             <form onSubmit={this.onSubmitHandler}>
 
@@ -52,9 +50,7 @@ Profile = React.createClass({
 
 
                             </form>
-                        </div>
-                    </div>
-                </div>
+                    </Container>
             </div>
         )
     }
