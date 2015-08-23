@@ -31,14 +31,8 @@ UserRegister = React.createClass({
                         <h1>Register</h1>
                         <form onSubmit={this.onSubmitHandler}>
                             <div className="inputs">
-                                <div className="form-control-wrapper">
-                                    <input type="text" className="form-control empty" name="username"/>
+                                <InputField label="username" type="text" name="username" />
 
-                                    <div className="floating-label">
-                                        Username
-                                    </div>
-                                    <span className="material-input"></span>
-                                </div>
                                 <div className="form-control-wrapper">
                                     <input type="text" className="form-control empty" name="email"/>
 

@@ -18,23 +18,43 @@ Profile = React.createClass({
         Meteor.call("UpdateProfile", data, (err, res) => {
             if(err)
                 console.log(err.reason)
-
-            console.log("SUCCESS: ", res)
         })
     },
     render() {
+
         let { currentUser } = this.data
+
+        if(currentUser == undefined) {
+            FlowRouter.go("Home")
+        }
 
         let firstName = currentUser.profile.firstName
         let lastName = currentUser.profile.lastName
 
         return (
             <div>
-                <form onSubmit={this.onSubmitHandler}>
-                    FirstName: <input type="text" name="firstName" defaultValue={firstName}/><br/>
-                    LastName: <input type="text" name="lastName" defaultValue={lastName}/><br/>
-                    <input type="submit" value="Submit"/>
-                </form>
+
+                <div className="container well page">
+                    <div className="row">
+                        <div className="col-sm-6 col-sm-offset-3">
+                            <h1>Profile</h1>
+                            <form onSubmit={this.onSubmitHandler}>
+
+                                <div className="inputs">
+
+                                    <InputField name="firstName" value={firstName} type="text" label="First Name" />
+                                    <InputField name="lastName" value={lastName} type="text" label="Last Name" />
+
+                                    <input type="submit" value="Save" className="btn btn-primary"/>
+
+                                </div>
+
+
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }

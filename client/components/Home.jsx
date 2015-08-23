@@ -9,6 +9,8 @@ Home = React.createClass({
                         <p className="text-center">yay for react!</p>
                     </div>
 
+                <InputField type="sample type" label="hey there" />
+
             </div>
         );
     }
