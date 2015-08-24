@@ -1,5 +1,9 @@
 Profile = React.createClass({
     mixins: [ReactMeteorData],
+    propTypes: {
+        current_user: React.PropTypes.object
+
+    },
     getMeteorData() {
         return {
             currentUser: Meteor.user()
@@ -24,8 +28,14 @@ Profile = React.createClass({
 
         let { currentUser } = this.data
 
+        //let currentUser = this.props.current_user
+
         if(currentUser == undefined) {
-            FlowRouter.go("Home")
+            return (
+                <div>
+                    <h1>Loading..</h1>
+                </div>
+            )
         }
 
         let firstName = currentUser.profile.firstName

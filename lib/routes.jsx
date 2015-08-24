@@ -34,7 +34,10 @@ loggedIn = FlowRouter.group({
 loggedIn.route("/Profile", {
     name: "Profile",
     action(params) {
-        renderMainLayout(<Profile />)
+        console.log("ENTERED ROUTE: /Profile")
+        const cu = Meteor.user()
+        console.log("USER: ", cu)
+        renderMainLayout(<Profile current_user={cu}/>)
     }
 })
 
