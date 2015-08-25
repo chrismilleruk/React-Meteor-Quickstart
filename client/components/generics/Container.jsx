@@ -1,4 +1,5 @@
 Container = React.createClass({
+    mixins:[],
     propTypes: {
         containerSize: React.PropTypes.string,
         offsetSize: React.PropTypes.string,
