@@ -11,9 +11,6 @@ MainMenuLogged = React.createClass({
         FlowRouter.go("Home")
     },
     render() {
-
-
-
         let loginButton;
         let { currentUser, brand } = this.data;
 
@@ -38,8 +35,6 @@ MainMenuLogged = React.createClass({
                             <li><a href="/Posts">Posts</a></li>
                         </ul>
                         <ul className="nav navbar-nav navbar-right">
-
-
                             <li className="dropdown">
                                 <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     {currentUser.username}

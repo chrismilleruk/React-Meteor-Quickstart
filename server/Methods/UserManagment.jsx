@@ -32,20 +32,3 @@ Meteor.methods({
         }
     }
 })
-
-
-//Meteor.users.update({
-//                _id:Meteor.userId()._id
-//            },{
-//                $set: {
-//                    profile: {
-//                        'firstName':data.firstName,
-//                        'lastName':data.lastName
-//                    }
-//                }
-//            })
-//            console.log("PROFILE UPDATED")
-//        } catch(e) {
-//            console.log(e.reason)
-//        }
-

@@ -1,8 +1,6 @@
 MainLayout = React.createClass({
 
     render() {
-
-
         $.material.init();
 
         return (

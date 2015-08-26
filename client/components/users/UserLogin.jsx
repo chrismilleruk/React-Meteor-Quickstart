@@ -27,43 +27,18 @@ UserLogin = React.createClass({
         if (currentUser) {
             userLogin = <h5>Man, you are logged in!</h5>
         } else {
-            userLogin = <div className="container well page">
-                <div className="row">
-                    <div className="col-sm-6 col-sm-offset-3">
+            userLogin =
+                <Container containerSize="6" offsetSize="3">
                         <h1>Login</h1>
-
-
                         <form onSubmit={this.onSubmitHandler}>
                             <div className="inputs">
-                                <div className="form-control-wrapper">
-                                    <input type="text" className="form-control empty" name="email"/>
-
-                                    <div className="floating-label">
-                                        Email
-                                    </div>
-                                    <span className="material-input"></span>
-                                </div>
-
-                                <div className="form-control-wrapper">
-                                    <input type="password" className="form-control empty" name="password"/>
-
-                                    <div className="floating-label">
-                                        Password
-                                    </div>
-                                    <span className="material-input"></span>
-                                </div>
-
+                                <InputField name="email" type="text" label="Email" />
+                                <InputField name="password" type="password" label="Password" />
                             </div>
-
 
                             <input type="submit" value="Login" className="btn btn-primary"/>
                         </form>
-
-
-
-                    </div>
-                </div>
-            </div>
+                </Container>
         }
 
 

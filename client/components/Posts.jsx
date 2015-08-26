@@ -21,10 +21,7 @@ Posts = React.createClass({
             <div>
                 <BlogPost>
                 </BlogPost>
-                <BlogPost>
-                </BlogPost>
-                <BlogPost>
-                </BlogPost>
+
             </div>
 
         )
