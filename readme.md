@@ -27,5 +27,5 @@ On the root of the project and add the normal bootstrap3 package.
 6. fourseven:scss
 7. accounts-password
 8. fezvrasta:bootstrap-material-design
-
+9. aldeed:collection2
 

@@ -1,9 +1,21 @@
 Posts = React.createClass({
     mixins: [ReactMeteorData],
     getMeteorData() {
+
+        var handle = Meteor.subscribe("allposts");
+
         return {
-            currentUser: Meteor.user()
+            postsLoading: ! handle.ready(),
+            currentUser: Meteor.user(),
+            postsLists: PostsLists.find().fetch()
         }
+    },
+    addPostHandler() {
+        Meteor.call("InsertPost", (err, res) => {
+            if(err) {
+                console.log(err.reason)
+            }
+        })
     },
     render() {
         let { currentUser } = this.data
@@ -17,11 +29,22 @@ Posts = React.createClass({
             )
         }
 
+        if (this.data.postsLoading) {
+            return (<h2>Posts Loading</h2>);
+        }
+
+
+        let blogposts = this.data.postsLists.map((e)=>{
+            console.log(e);
+            return (<BlogPost author=e.author title=e.title key=e._id />)
+        })
+
         return (
             <div>
-                <BlogPost>
-                </BlogPost>
-
+                <Container containerSize="10" offsetSize="1">
+                    <button onClick={this.addPostHandler}>Add Post</button>
+                    {blogposts}
+                </Container>
             </div>
 
         )

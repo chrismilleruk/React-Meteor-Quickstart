@@ -1,5 +1,4 @@
-
-
-//Meteor.publish("posts", () => {
-//    return Posts.find({})
-//})
+Meteor.publish("allposts", () => {
+    console.log(PostsLists.find().count())
+    return PostsLists.find()
+})

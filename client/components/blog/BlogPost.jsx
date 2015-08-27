@@ -1,21 +1,18 @@
-Posts = new Mongo.Collection("posts")
 
 BlogPost = React.createClass({
-    mixins:[ReactMeteorData],
-    getMeteorData() {
-        return {
-            postsList: "Hello"
-        }
-    },
+    mixins:[],
+
     render() {
 
-        if(! this.data.postsList) {
-            return(<h1>Loading</h1>)
-        }
+        let _data = this.props.postData
+        console.log(_data)
 
         return(
             <div>
-                <h1>Hello {this.data.postsList}</h1>
+                <Panel>
+                    {_data.title}
+                </Panel>
+
             </div>
         )
     }
