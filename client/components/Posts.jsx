@@ -36,7 +36,7 @@ Posts = React.createClass({
 
         let blogposts = this.data.postsLists.map((e)=>{
             console.log(e);
-            return (<BlogPost author=e.author title=e.title key=e._id />)
+            return (<BlogPost postData={e} key={e._id} />)
         })
 
         return (
