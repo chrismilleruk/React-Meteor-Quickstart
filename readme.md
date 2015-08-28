@@ -1,4 +1,4 @@
-#React & Meteor integration
+#React & Meteor Quickstart
 
 ##Purpose.  
 
@@ -10,7 +10,7 @@ The views included are
 3. Profile
 4. Home
 
-All the pages are bootstrap-3 styled, and we use the meteor theme (best theme ever). So if you for ever reason dont wont this one, you just   
+All the pages are bootstrap-3 styled, and we use the material theme (best theme ever). So if you for ever reason dont wont this one, you just   
 
 `Meteor remove fezvrasta:bootstrap-material-design`  
 
