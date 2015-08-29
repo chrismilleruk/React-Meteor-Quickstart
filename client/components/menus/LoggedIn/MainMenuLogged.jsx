@@ -41,6 +41,7 @@ MainMenuLogged = React.createClass({
                                     <span className="caret"></span>
                                 </a>
                                 <ul className="dropdown-menu">
+                                    <li><a href="/NewPost">Add Post</a></li>
                                     <li><a href="/Profile">Profile</a></li>
                                     <li role="separator" className="divider"></li>
                                     <li>{loginButton}</li>

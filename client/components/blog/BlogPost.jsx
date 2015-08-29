@@ -9,10 +9,7 @@ BlogPost = React.createClass({
 
         return(
             <div>
-                <Panel title={_data.title} author={_data.author}>
-
-                </Panel>
-
+                <Panel title={_data.title} author={_data.author} content={_data.content} />
             </div>
         )
     }

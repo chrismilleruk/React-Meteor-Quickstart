@@ -10,13 +10,6 @@ Posts = React.createClass({
             postsLists: PostsLists.find().fetch()
         }
     },
-    addPostHandler() {
-        Meteor.call("InsertPost", (err, res) => {
-            if(err) {
-                console.log(err.reason)
-            }
-        })
-    },
     render() {
         let { currentUser } = this.data
         if (currentUser == undefined) {
@@ -42,7 +35,6 @@ Posts = React.createClass({
         return (
             <div>
                 <Container containerSize="10" offsetSize="1">
-                    <button onClick={this.addPostHandler}>Add Post</button>
                     {blogposts}
                 </Container>
             </div>

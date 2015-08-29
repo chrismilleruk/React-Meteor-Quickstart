@@ -30,8 +30,6 @@ MainMenu = React.createClass({
                         </div>
                         <ul className="nav navbar-nav">
 
-
-
                         </ul>
                         <ul className="nav navbar-nav navbar-right">
 

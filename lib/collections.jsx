@@ -14,9 +14,17 @@ Schemas.PostsListSchema = ({
         label: "author",
         max: 100
     },
+    content: {
+        type: String,
+        label: "content"
+    },
     createdAt: {
         type: Date,
         label: "Created At"
+    },
+    owner: {
+        type: String,
+        label: "owner"
     }
 })
 
