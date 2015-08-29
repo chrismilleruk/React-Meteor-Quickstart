@@ -1,6 +1,5 @@
 PostsLists = new Mongo.Collection("posts")
 
-
 Schemas = {}
 
 Schemas.PostsListSchema = ({

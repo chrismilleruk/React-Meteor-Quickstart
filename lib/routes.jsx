@@ -52,6 +52,13 @@ loggedIn.route("/NewPost", {
     }
 })
 
+loggedIn.route("/MyPosts", {
+    name: "MyPosts",
+    action(params) {
+        renderMainLayout(<MyPosts />)
+    }
+})
+
 
 renderMainLayout = (component) => {
     ReactLayout.render(MainLayout, {

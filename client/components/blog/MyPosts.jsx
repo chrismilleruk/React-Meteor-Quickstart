@@ -6,6 +6,12 @@ MyPosts = React.createClass({
         }
     },
     render(){
-        return(<h1>he</h1>)
+        return(
+            <div>
+                <Container containerSize="6" offsetSize="3">
+
+                </Container>
+            </div>
+        )
     }
 })
