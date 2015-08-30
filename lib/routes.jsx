@@ -55,7 +55,7 @@ loggedIn.route("/NewPost", {
 loggedIn.route("/MyPosts", {
     name: "MyPosts",
     action(params) {
-        renderMainLayout(<MyPosts />)
+        renderMainLayout(<MyPosts userId={Meteor.userId()}/>)
     }
 })
 
